@@ -14,17 +14,18 @@ import com.example.sistemaentrenamientocorporalypreparacinfisica.R
 import com.example.sistemaentrenamientocorporalypreparacinfisica.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 
-
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-        private val binding get() = _binding!!
-    private lateinit var viewModel:EstadisticasViewModel
-    var idUserV:String? = null
-    var loginSucess:Boolean? = null
+    private val binding get() = _binding!!
+    private lateinit var viewModel: EstadisticasViewModel
+    var idUserV: String? = null
+    var loginSucess: Boolean? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,19 +34,26 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.estadisticasButon.setOnClickListener(){
+        binding.estadisticasButon.setOnClickListener {
             findNavController().navigate(
                 HomeFragmentDirections.actionNavigationHomeToEstadisticasEjercicio(
                     idUser = idUserV!!.toInt()
                 )
             )
         }
-        binding.upData.setOnClickListener(){
+
+        binding.upData.setOnClickListener {
             findNavController().navigate(
                 HomeFragmentDirections.actionNavigationHomeToUpdateDatos(
                     idUser = idUserV!!.toInt()
                 )
             )
+        }
+
+        // Clic del nuevo botón para la evaluación clínica
+        binding.btnRealizarEvaluacion.setOnClickListener {
+            val action = HomeFragmentDirections.actionNavigationHomeToSeleccionEvaluacion()
+            findNavController().navigate(action)
         }
 
         return root
@@ -55,17 +63,17 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val mainActivity = requireActivity() as MainActivity
-        //En caso de no haber iniciado sesion retorna a la pantalla de registro
-        lifecycleScope.launch{
+        // En caso de no haber iniciado sesión retorna a la pantalla de registro
+        lifecycleScope.launch {
             loginSucess = MainActivity.getLoginSucces(requireContext())
-            if (!loginSucess!!){
+            if (!loginSucess!!) {
                 findNavController().navigate(R.id.firts_login)
                 mainActivity.hideBottomNav()
-            }else {
+            } else {
                 idUserV = MainActivity.getIdUser(requireContext())
                 // Solo ejecutar este código cuando dataSesion no sea null
                 idUserV?.let {
-                    val factory = EstadisticasViewModelFactory(it,requireContext())
+                    val factory = EstadisticasViewModelFactory(it, requireContext())
                     viewModel = ViewModelProvider(this@HomeFragment, factory).get(EstadisticasViewModel::class.java)
                     observeViewModel()
                 }
@@ -105,7 +113,6 @@ class HomeFragment : Fragment() {
                     binding.progressBarEstado.progress = 87
                 }
             } ?: run {
-                // No hay datos, poner placeholders o vacíos
                 binding.altura.text = "-"
                 binding.peso.text = "-"
                 binding.bmi.text = "-"
@@ -115,12 +122,11 @@ class HomeFragment : Fragment() {
                 binding.pesoDeMusculosKilos.text = "-"
             }
         })
-
     }
 
-    override fun onResume(){
+    override fun onResume() {
         super.onResume()
-        if(::viewModel.isInitialized){
+        if (::viewModel.isInitialized) {
             viewModel.updateData()
         }
     }
@@ -129,5 +135,4 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

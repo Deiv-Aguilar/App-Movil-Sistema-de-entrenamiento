@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigation_home_to_updateDatos"
             app:destination="@id/updateDatos" />
+        <action
+            android:id="@+id/action_navigation_home_to_seleccionEvaluacion"
+            app:destination="@id/seleccionEvaluacion" />
         <argument
             android:name="idUser"
             app:argType="integer" />
@@ -359,5 +362,30 @@
             android:name="idUser"
             app:argType="integer" />
     </fragment>
+
+    <fragment
+        android:id="@+id/seleccionEvaluacion"
+        android:name="com.example.sistemaentrenamientocorporalypreparacinfisica.ui.estasdisticas.SeleccionEvaluacion"
+        android:label="Selección de Evaluación"
+        tools:layout="@layout/fragment_seleccion_evaluacion">
+        <action
+            android:id="@+id/action_seleccionEvaluacion_to_cuestionarioOswestry"
+            app:destination="@id/cuestionarioOswestry" />
+        <action
+            android:id="@+id/action_seleccionEvaluacion_to_cuestionarioQuickDash"
+            app:destination="@id/cuestionarioQuickDash" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cuestionarioOswestry"
+        android:name="com.example.sistemaentrenamientocorporalypreparacinfisica.ui.formulario.CuestionarioOswestry"
+        android:label="Cuestionario Oswestry"
+        tools:layout="@layout/fragment_cuestionario_oswestry" />
+
+    <fragment
+        android:id="@+id/cuestionarioQuickDash"
+        android:name="com.example.sistemaentrenamientocorporalypreparacinfisica.ui.formulario.CuestionarioQuickDash"
+        android:label="Cuestionario QuickDASH"
+        tools:layout="@layout/fragment_cuestionario_quickdash" />
 
 </navigation>

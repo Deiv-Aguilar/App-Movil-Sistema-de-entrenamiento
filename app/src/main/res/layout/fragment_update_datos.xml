@@ -7,25 +7,24 @@
     tools:context=".ui.estasdisticas.UpdateDatos">
 
     <LinearLayout
-            android:id="@+id/containerLinear"
+        android:id="@+id/containerLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:orientation="vertical">
+            android:text="@string/tituloinsertDatos"
+            android:textSize="30dp"
+            android:fontFamily="@font/oswald_variablefont_wght"
+            android:layout_margin="15dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tituloinsertDatos"
-                android:textSize="30dp"
-                android:fontFamily="@font/oswald_variablefont_wght"
-                android:layout_margin="15dp"
-                ></TextView>
-
-            <RelativeLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -59,8 +58,7 @@
                 android:background="@drawable/borde_text_edits"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                android:paddingLeft="10dp">
-            </EditText>
+                android:paddingLeft="10dp" />
 
             <TextView
                 android:id="@+id/textKg"
@@ -71,7 +69,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="15dp"/>
         </RelativeLayout>
-            <RelativeLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -82,7 +81,8 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:src="@drawable/height_24px"></ImageView>
+                android:src="@drawable/height_24px" />
+
             <TextView
                 android:id="@+id/altura"
                 android:layout_width="100dp"
@@ -90,8 +90,7 @@
                 android:text="@string/altura"
                 android:layout_toRightOf="@id/iconAltura"
                 android:layout_marginLeft="15dp"
-                android:layout_centerVertical="true"
-                ></TextView>
+                android:layout_centerVertical="true" />
 
             <EditText
                 android:id="@+id/entradaAltura"
@@ -104,8 +103,10 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/borde_text_edits"
                 android:ems="10"
+                android:hint="1.70"
                 android:inputType="numberDecimal"
-                android:paddingLeft="10dp"></EditText>
+                android:paddingLeft="10dp" />
+
             <TextView
                 android:id="@+id/txaltura"
                 android:layout_width="wrap_content"
@@ -113,115 +114,119 @@
                 android:text="m"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="15dp">
-            </TextView>
+                android:layout_marginRight="15dp" />
         </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@color/fondo">
+
+            <ImageView
+                android:id="@+id/iconGrasa"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/close_24px" />
+
+            <TextView
+                android:id="@+id/grasa"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:background="@color/fondo">
+                android:text="@string/grasaCorporal"
+                android:layout_toRightOf="@id/iconGrasa"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true" />
 
-                <ImageView
-                    android:id="@+id/iconGrasa"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/close_24px"></ImageView>
-                <TextView
-                    android:id="@+id/grasa"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/grasaCorporal"
-                    android:layout_toRightOf="@id/iconGrasa"
-                    android:layout_marginLeft="15dp"
-                    android:layout_centerVertical="true"
-                    ></TextView>
-
-                <EditText
-                    android:id="@+id/entradagrasa"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toRightOf="@id/grasa"
-                    android:layout_toLeftOf="@+id/textgrasa"
-                    android:background="@drawable/borde_text_edits"
-                    android:ems="10"
-                    android:inputType="numberDecimal"
-                    android:paddingLeft="10dp"></EditText>
-                <TextView
-                    android:id="@+id/textgrasa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="15dp"/>
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/entradagrasa"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:background="@color/fondo">
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/grasa"
+                android:layout_toLeftOf="@+id/textgrasa"
+                android:background="@drawable/borde_text_edits"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:paddingLeft="10dp" />
 
-                <ImageView
-                    android:id="@+id/iconMusculo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/close_24px"></ImageView>
-                <TextView
-                    android:id="@+id/musculo"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/musculo"
-                    android:layout_toRightOf="@id/iconMusculo"
-                    android:layout_marginLeft="15dp"
-                    android:layout_centerVertical="true"
-                    ></TextView>
+            <TextView
+                android:id="@+id/textgrasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="15dp"/>
+        </RelativeLayout>
 
-                <EditText
-                    android:id="@+id/entradaMusculo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toRightOf="@id/musculo"
-                    android:layout_toLeftOf="@+id/pocentajeM"
-                    android:background="@drawable/borde_text_edits"
-                    android:ems="10"
-                    android:inputType="numberDecimal"
-                    android:paddingLeft="10dp"></EditText>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@color/fondo">
 
-                <TextView
-                    android:id="@+id/pocentajeM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="15dp"/>
-            </RelativeLayout>
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/iconMusculo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/close_24px" />
+
+            <TextView
+                android:id="@+id/musculo"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/musculo"
+                android:layout_toRightOf="@id/iconMusculo"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true" />
+
+            <EditText
+                android:id="@+id/entradaMusculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/musculo"
+                android:layout_toLeftOf="@+id/pocentajeM"
+                android:background="@drawable/borde_text_edits"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:id="@+id/pocentajeM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="15dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
     <Button
-        android:id="@+id/guardarDatos"
+        android:id="@+id/btnSincronizarYGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="@string/actualizarDatos"
-        android:layout_alignParentBottom="true"
+        android:text="Sincronizar y Guardar Datos"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
-    </Button>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewQuickDash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cuestionario QuickDASH"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#212529"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Evaluación de síntomas y función de miembros superiores. (Responde al menos 10 de 11)"
+            android:textSize="14sp"
+            android:textColor="#6C757D"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sección 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Abrir un bote que tenga la tapa apretada."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dificultad moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imposible" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 2 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Realizar los quehaceres del hogar más fuertes (lavar ventanas, trapear)."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dificultad moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imposible" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 3 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Cargar una bolsa de compras con peso."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dificultad moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imposible" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 4 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. Lavarse la espalda."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dificultad moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imposible" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 5 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5. Usar un cuchillo para cortar alimentos."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dificultad moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imposible" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 6 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6. Actividades recreativas con impacto en brazo/hombro/mano."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dificultad moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imposible" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 7 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7. ¿Dificultad en actividades sociales con familiares/amigos?"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="En absoluto" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poco" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Moderadamente" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bastante" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Extremadamente" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 8 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8. ¿Tuvo que limitar su trabajo u otras actividades diarias?"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="En absoluto" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poco" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Moderadamente" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bastante" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Extremadamente" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 9 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9. Intensidad del dolor de brazo, hombro o mano."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Extrema" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 10 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10. Hormigueo en el brazo, hombro o mano."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Extrema" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección 11 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="11. Dificultad para dormir a causa del dolor."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ninguna dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poca dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dificultad moderada" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mucha dificultad" />
+                    <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imposible" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnCalcularQuickDash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Calcular Resultado"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvResultadoQuickDash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#0D6EFD"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:text="Puntaje QuickDASH: 31.8 / 100" />
+
+    </LinearLayout>
+</ScrollView>

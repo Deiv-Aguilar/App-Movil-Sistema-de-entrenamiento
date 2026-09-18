@@ -310,7 +310,6 @@
 
                     </LinearLayout>
 
-
                     <Button
                         android:id="@+id/estadisticasButon"
                         android:layout_width="350dp"
@@ -324,10 +323,18 @@
                         android:layout_height="78dp"
                         android:text="Subir datos"
                         android:textSize="15dp"></Button>
+
+                    <Button
+                        android:id="@+id/btnRealizarEvaluacion"
+                        android:layout_width="350dp"
+                        android:layout_height="78dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Realizar Evaluación Clínica"
+                        android:textSize="15dp"></Button>
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

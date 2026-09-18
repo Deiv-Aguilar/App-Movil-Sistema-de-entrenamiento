@@ -3,25 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ui.ejercicios.EjerciciosFragment"
-    >
+    android:layout_height="match_parent"
+    tools:context=".ui.ejercicios.EjerciciosFragment">
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="15dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <TextView
@@ -29,11 +28,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/oswald_variablefont_wght"
                 android:text="@string/allEjercicios"
-                android:textSize="20dp"></TextView>
+                android:textSize="20dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp"></Space>
+                android:layout_height="15dp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/todosLosEjerciciosCard"
@@ -47,17 +46,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <ImageView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/ejercicio_image3">
-                        </ImageView>
+                            android:src="@drawable/ejercicio_image3" />
                     </LinearLayout>
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -69,33 +70,33 @@
                             android:padding="15dp"
                             android:text="@string/verallEjercicios"
                             android:textColor="@color/white"
-                            android:textSize="20dp"></TextView>
+                            android:textSize="20dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center|right"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/arrowforward"></ImageView>
+                            android:src="@drawable/arrowforward" />
                     </FrameLayout>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp"></Space>
+                android:layout_height="15dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/oswald_variablefont_wght"
                 android:text="@string/Categorias"
-                android:textSize="20dp"></TextView>
+                android:textSize="20dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp"></Space>
+                android:layout_height="15dp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/categoriasEjercicio"
@@ -109,15 +110,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:src="@drawable/ejercicio_image2"
-                        android:scaleType="centerCrop">
-                    </ImageView>
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ejercicio_image2" />
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -125,32 +128,33 @@
                             android:padding="15dp"
                             android:text="@string/verallCategorias"
                             android:textColor="@color/white"
-                            android:textSize="20dp"></TextView>
+                            android:textSize="20dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center|right"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/arrowforward"></ImageView>
+                            android:src="@drawable/arrowforward" />
                     </FrameLayout>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp"></Space>
+                android:layout_height="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/oswald_variablefont_wght"
                 android:text="@string/rutina"
-                android:textSize="20dp"></TextView>
+                android:textSize="20dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp"></Space>
+                android:layout_height="15dp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/tarjetaRutinaHoy"
@@ -176,7 +180,7 @@
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/patron_4"></ImageView>
+                            android:src="@drawable/patron_4" />
 
                         <ImageView
                             android:id="@+id/img2"
@@ -184,7 +188,7 @@
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/patron_4"></ImageView>
+                            android:src="@drawable/patron_4" />
 
                         <ImageView
                             android:id="@+id/img3"
@@ -192,7 +196,7 @@
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/patron_4"></ImageView>
+                            android:src="@drawable/patron_4" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -206,7 +210,7 @@
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/patron_4"></ImageView>
+                            android:src="@drawable/patron_4" />
 
                         <ImageView
                             android:id="@+id/img5"
@@ -214,7 +218,7 @@
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/patron_4"></ImageView>
+                            android:src="@drawable/patron_4" />
 
                         <ImageView
                             android:id="@+id/img6"
@@ -222,7 +226,7 @@
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/patron_4"></ImageView>
+                            android:src="@drawable/patron_4" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -238,9 +242,8 @@
                             android:fontFamily="@font/oswald_variablefont_wght"
                             android:text="@string/rutinaRecomendada"
                             android:textColor="@color/white"
-                            android:textSize="20dp"></TextView>
+                            android:textSize="20dp" />
                     </LinearLayout>
-                    <!-- Title, secondary and supporting text -->
 
                 </LinearLayout>
 
@@ -248,7 +251,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp"></Space>
+                android:layout_height="15dp" />
 
         </LinearLayout>
     </ScrollView>

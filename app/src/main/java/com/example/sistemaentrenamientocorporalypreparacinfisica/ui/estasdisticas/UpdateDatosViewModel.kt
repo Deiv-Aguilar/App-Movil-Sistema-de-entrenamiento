@@ -10,7 +10,27 @@ import com.example.sistemaentrenamientocorporalypreparacinfisica.SupabaseInstanc
 import com.example.sistemaentrenamientocorporalypreparacinfisica.UsuarioAvances
 import io.github.jan.supabase.postgrest.postgrest
 import io.github.jan.supabase.postgrest.query.Columns
+import io.github.jan.supabase.postgrest.query.Order
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
+
+// DTOs serializables para evitar el error con 'Any'
+@Serializable
+data class InsertAvancesDto(
+    val idUser: String,
+    val peso: Double,
+    val altura: Double,
+    val pesoGrasa: Double?,
+    val pesoMusculo: Double?
+)
+
+@Serializable
+data class UpdateAvancesDto(
+    val peso: Double,
+    val altura: Double,
+    val pesoGrasa: Double?,
+    val pesoMusculo: Double?
+)
 
 class UpdateDatosViewModel(
     private val idUser: String,
@@ -20,7 +40,6 @@ class UpdateDatosViewModel(
     private val _usuarioAvances = MutableLiveData<UsuarioAvances?>()
     val usuarioAvances: LiveData<UsuarioAvances?> = _usuarioAvances
 
-    // LiveData para notificar actualizaciones a otros ViewModels
     private val _datosActualizados = MutableLiveData<Boolean>()
     val datosActualizados: LiveData<Boolean> = _datosActualizados
 
@@ -37,7 +56,7 @@ class UpdateDatosViewModel(
                     .from("usuarioavances")
                     .select(Columns.ALL) {
                         filter { eq("idUser", idUser) }
-                        order("fechaDatos", io.github.jan.supabase.postgrest.query.Order.DESCENDING)
+                        order("fechaDatos", Order.DESCENDING)
                     }
                     .decodeList<UsuarioAvances>()
 
@@ -50,7 +69,7 @@ class UpdateDatosViewModel(
     }
 
     fun insertDataUsuariosAvances(
-        idUsuarioAvances: Int,
+        idUsuarioAvances: Int?,
         peso: Double,
         altura: Double,
         pesoGrasa: Double?,
@@ -59,25 +78,38 @@ class UpdateDatosViewModel(
     ) {
         viewModelScope.launch {
             try {
-                SupabaseInstance.client.postgrest
-                    .from("usuarioavances")
-                    .update(
-                        mapOf(
-                            "peso" to peso,
-                            "altura" to altura,
-                            "pesoGrasa" to pesoGrasa,
-                            "pesoMusculo" to pesoMusculo
-                        )
-                    ) {
-                        filter { eq("idUserAvances", idUsuarioAvances) }
-                    }
+                if (idUsuarioAvances != null && idUsuarioAvances > 0) {
+                    val updateBody = UpdateAvancesDto(
+                        peso = peso,
+                        altura = altura,
+                        pesoGrasa = pesoGrasa,
+                        pesoMusculo = pesoMusculo
+                    )
 
-                // 🚀 Notificamos que hubo un update
+                    SupabaseInstance.client.postgrest
+                        .from("usuarioavances")
+                        .update(updateBody) {
+                            filter { eq("idUserAvances", idUsuarioAvances) }
+                        }
+                } else {
+                    val insertBody = InsertAvancesDto(
+                        idUser = idUser,
+                        peso = peso,
+                        altura = altura,
+                        pesoGrasa = pesoGrasa,
+                        pesoMusculo = pesoMusculo
+                    )
+
+                    SupabaseInstance.client.postgrest
+                        .from("usuarioavances")
+                        .insert(insertBody)
+                }
+
                 _datosActualizados.value = true
                 onResult(true)
 
             } catch (e: Exception) {
-                Log.e(TAG, "Error al actualizar datos: ${e.message}", e)
+                Log.e(TAG, "Error al guardar/actualizar datos: ${e.message}", e)
                 onResult(false)
             }
         }

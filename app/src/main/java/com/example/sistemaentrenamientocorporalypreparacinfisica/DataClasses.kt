@@ -18,9 +18,9 @@ data class User1(
 
 @Serializable
 data class UsuarioAvances(
-    val idUserAvances: Int,
+    val idUserAvances: Int? = null,
     val idUser: Int,
-    val fechaDatos: String,  // yyyy-MM-dd
+    val fechaDatos: String? = null,  // yyyy-MM-dd / timestamptz (permite null de forma segura)
     val peso: Double,
     val altura: Double,
     val pesoGrasa: Double? = null,
@@ -30,7 +30,7 @@ data class UsuarioAvances(
 @Serializable
 data class UsuarioAvancesInsert(
     val idUser: Int,
-    val fechaDatos: String,  // yyyy-MM-dd
+    val fechaDatos: String? = null,  // si es null, Supabase asigna now() por defecto
     val peso: Double,
     val altura: Double,
     val pesoGrasa: Double? = null,
@@ -43,10 +43,9 @@ data class UsuarioObjetivosInsert(
     val idParteTrabajo: Int
 )
 
-
 @Serializable
 data class Calorias(
-    val idCalorias: Int? =null,
+    val idCalorias: Int? = null,
     val idUser: Int,
     val fechaDatos: String? = null,
     val calorias: Int
@@ -78,6 +77,4 @@ data class ParteTrabajoCuerpo(
     val parteCuerpo: String,
     var isChecked: Boolean = false
 )
-
-
 

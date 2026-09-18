@@ -9,9 +9,7 @@
     <com.example.sistemaentrenamientocorporalypreparacinfisica.CameraSourcePreview
         android:id="@+id/preview_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/control">
+        android:layout_height="match_parent">
     </com.example.sistemaentrenamientocorporalypreparacinfisica.CameraSourcePreview>
 
     <com.example.sistemaentrenamientocorporalypreparacinfisica.GraphicOverlay
@@ -31,24 +29,18 @@
         app:layout_constraintRight_toRightOf="@id/preview_view"
         app:layout_constraintTop_toTopOf="@id/preview_view" />
 
-    <LinearLayout
-        android:id="@id/control"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+    <ToggleButton
+        android:id="@+id/facing_switch"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/toggle_style"
+        android:checked="false"
+        android:textColor="@color/white"
+        android:textOff=""
+        android:textOn=""
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@color/purple_500"
-        android:orientation="vertical">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ToggleButton
-            android:id="@+id/facing_switch"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@drawable/toggle_style"
-            android:textColor="@color/white"
-            android:checked="false"
-            android:textOff=""
-            android:textOn=""/>
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

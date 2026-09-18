@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewOswestry"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTituloOswestry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cuestionario de Oswestry"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#212529"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvSubtituloOswestry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Índice de Discapacidad de Oswestry. Selecciona la frase que mejor describe tu situación en cada sección."
+            android:textSize="14sp"
+            android:textColor="#6C757D"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 1. Intensidad del dolor -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Intensidad del dolor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec1Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo soportar el dolor sin necesidad de tomar calmantes." />
+                    <RadioButton android:id="@+id/rbSec1Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor es fuerte, pero me arreglo sin tomar calmantes." />
+                    <RadioButton android:id="@+id/rbSec1Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Los calmantes me alivian completamente el dolor." />
+                    <RadioButton android:id="@+id/rbSec1Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Los calmantes me alivian un poco el dolor." />
+                    <RadioButton android:id="@+id/rbSec1Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Los calmantes apenas me alivian el dolor." />
+                    <RadioButton android:id="@+id/rbSec1Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Los calmantes no me alivian el dolor y no los tomo." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 2. Cuidados personales -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Cuidados personales (lavarse, vestirse, etc.)"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec2Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Me las puedo arreglar solo sin que me aumente el dolor." />
+                    <RadioButton android:id="@+id/rbSec2Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Me las puedo arreglar solo pero esto me aumenta el dolor." />
+                    <RadioButton android:id="@+id/rbSec2Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Lavarme y vestirme me produce dolor y tengo que hacerlo despacio y con cuidado." />
+                    <RadioButton android:id="@+id/rbSec2Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Necesito alguna ayuda, pero consigo hacer la mayoría de las cosas yo solo." />
+                    <RadioButton android:id="@+id/rbSec2Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Necesito ayuda todos los días para la mayoría de mis cuidados personales." />
+                    <RadioButton android:id="@+id/rbSec2Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No puedo vestirme, me cuesta lavarme y suelo quedarme en la cama." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 3. Levantar peso -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Levantar peso"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec3Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo levantar objetos pesados sin que me aumente el dolor." />
+                    <RadioButton android:id="@+id/rbSec3Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo levantar objetos pesados pero me aumenta el dolor." />
+                    <RadioButton android:id="@+id/rbSec3Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide levantar objetos pesados del suelo, pero sí si están en una mesa." />
+                    <RadioButton android:id="@+id/rbSec3Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide levantar objetos pesados, pero sí ligeros o medianos si están cómodos." />
+                    <RadioButton android:id="@+id/rbSec3Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sólo puedo levantar objetos muy ligeros." />
+                    <RadioButton android:id="@+id/rbSec3Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No puedo levantar ni elevar ningún objeto." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 4. Andar -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. Andar"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec4Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor no me impide andar cualquier distancia." />
+                    <RadioButton android:id="@+id/rbSec4Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide andar más de un kilómetro." />
+                    <RadioButton android:id="@+id/rbSec4Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide andar más de 500 metros." />
+                    <RadioButton android:id="@+id/rbSec4Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide andar más de 250 metros." />
+                    <RadioButton android:id="@+id/rbSec4Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sólo puedo andar usando bastón o muletas." />
+                    <RadioButton android:id="@+id/rbSec4Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Permanézco en la cama casi todo el tiempo y tengo que ir a rastras al baño." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 5. Estar sentado -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5. Estar sentado"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec5Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo estar sentado en cualquier tipo de silla todo el tiempo que quiera." />
+                    <RadioButton android:id="@+id/rbSec5Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo estar sentado en mi silla favorita todo el tiempo que quiera." />
+                    <RadioButton android:id="@+id/rbSec5Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide estar sentado más de una hora." />
+                    <RadioButton android:id="@+id/rbSec5Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide estar sentado más de media hora." />
+                    <RadioButton android:id="@+id/rbSec5Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide estar sentado más de 10 minutos." />
+                    <RadioButton android:id="@+id/rbSec5Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide totalmente estar sentado." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 6. Estar de pie -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6. Estar de pie"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec6Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo estar de pie todo el tiempo que quiera sin que me aumente el dolor." />
+                    <RadioButton android:id="@+id/rbSec6Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo estar de pie tanto tiempo como quiera pero me aumenta el dolor." />
+                    <RadioButton android:id="@+id/rbSec6Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide estar de pie más de una hora." />
+                    <RadioButton android:id="@+id/rbSec6Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide estar de pie más de media hora." />
+                    <RadioButton android:id="@+id/rbSec6Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide estar de pie más de 10 minutos." />
+                    <RadioButton android:id="@+id/rbSec6Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide estar de pie." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 7. Dormir -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7. Dormir"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec7Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor no me impide dormir bien." />
+                    <RadioButton android:id="@+id/rbSec7Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sólo puedo dormir si tomo pastillas." />
+                    <RadioButton android:id="@+id/rbSec7Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Incluso tomando pastillas duermo menos de 6 horas." />
+                    <RadioButton android:id="@+id/rbSec7Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Incluso tomando pastillas duermo menos de 4 horas." />
+                    <RadioButton android:id="@+id/rbSec7Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Incluso tomando pastillas duermo menos de 2 horas." />
+                    <RadioButton android:id="@+id/rbSec7Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide totalmente dormir." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 8. Actividad sexual (si procede) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8. Actividad sexual"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec8Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mi actividad sexual es normal y no me produce dolor extra." />
+                    <RadioButton android:id="@+id/rbSec8Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mi actividad sexual es normal pero me aumenta el dolor." />
+                    <RadioButton android:id="@+id/rbSec8Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mi actividad sexual es casi normal pero me produce mucho dolor." />
+                    <RadioButton android:id="@+id/rbSec8Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mi actividad sexual se ha visto muy limitada a causa del dolor." />
+                    <RadioButton android:id="@+id/rbSec8Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mi actividad sexual es casi nula a causa del dolor." />
+                    <RadioButton android:id="@+id/rbSec8Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide todo tipo de actividad sexual." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 9. Vida social -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9. Vida social"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec9Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mi vida social es normal y no me produce dolor extra." />
+                    <RadioButton android:id="@+id/rbSec9Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mi vida social es normal pero me aumenta el dolor." />
+                    <RadioButton android:id="@+id/rbSec9Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor no influye en mi vida social salvo en mis actividades más enérgicas (baile, etc)." />
+                    <RadioButton android:id="@+id/rbSec9Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor ha limitado mi vida social y no salgo tan a menudo." />
+                    <RadioButton android:id="@+id/rbSec9Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor ha limitado mi vida social a mi casa." />
+                    <RadioButton android:id="@+id/rbSec9Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No tengo vida social a causa del dolor." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 10. Viajar -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10. Viajar"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D6EFD"
+                    android:layout_marginBottom="8dp" />
+                <RadioGroup
+                    android:id="@+id/rgSeccion10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbSec10Op0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo viajar a cualquier sitio sin que me produzca dolor." />
+                    <RadioButton android:id="@+id/rbSec10Op1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Puedo viajar a cualquier sitio, pero me aumenta el dolor." />
+                    <RadioButton android:id="@+id/rbSec10Op2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor es fuerte pero me adapto a viajes de más de 2 horas." />
+                    <RadioButton android:id="@+id/rbSec10Op3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me limita a viajes de menos de una hora." />
+                    <RadioButton android:id="@+id/rbSec10Op4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me limita a viajes cortos y necesarios de menos de media hora." />
+                    <RadioButton android:id="@+id/rbSec10Op5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El dolor me impide viajar salvo para ir al médico o al hospital." />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnCalcularOswestry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Calcular Resultado"
+            android:textSize="16sp" />
+
+        <!-- TextView agregado para mostrar el resultado fijo en pantalla -->
+        <!-- TextView para mostrar el resultado -->
+        <TextView
+            android:id="@+id/tvResultadoOswestry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#0D6EFD"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:text="Puntaje total: 14 / 50\nPorcentaje: 28.0%\nDiscapacidad moderada (21 - 40%)" />
+
+    </LinearLayout>
+</ScrollView>

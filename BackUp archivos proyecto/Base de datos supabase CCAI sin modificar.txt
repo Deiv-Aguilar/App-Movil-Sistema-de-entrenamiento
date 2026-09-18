@@ -1,0 +1,108 @@
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.alimentos (
+  idAlimento bigint NOT NULL,
+  nombre text,
+  descripcion text,
+  imagen text,
+  calorias text,
+  tipoComida text,
+  CONSTRAINT alimentos_pkey PRIMARY KEY (idAlimento)
+);
+CREATE TABLE public.colacion (
+  tipoColacion text,
+  idColacion bigint NOT NULL,
+  nombre text,
+  descripcion text,
+  imagen text,
+  calorias text,
+  CONSTRAINT colacion_pkey PRIMARY KEY (idColacion)
+);
+CREATE TABLE public.colacionrecomendada (
+  idColacionRecomendada text NOT NULL,
+  idColacion bigint,
+  fechaConsumo text,
+  consumida text,
+  idUser bigint,
+  CONSTRAINT colacionrecomendada_pkey PRIMARY KEY (idColacionRecomendada),
+  CONSTRAINT colacionrecomendada_idColacion_fkey FOREIGN KEY (idColacion) REFERENCES public.colacion(idColacion),
+  CONSTRAINT colacionrecomendada_idUser_fkey FOREIGN KEY (idUser) REFERENCES public.user(idUser)
+);
+CREATE TABLE public.comidarecomendada (
+  idComidaRecomendada text NOT NULL,
+  idAlimento bigint,
+  idUser text,
+  fechaConsumo text,
+  consumida text,
+  CONSTRAINT comidarecomendada_pkey PRIMARY KEY (idComidaRecomendada),
+  CONSTRAINT comidarecomendada_idAlimento_fkey FOREIGN KEY (idAlimento) REFERENCES public.alimentos(idAlimento)
+);
+CREATE TABLE public.ejercicio (
+  idParteTrabajo bigint,
+  idEjercicio bigint NOT NULL,
+  nombre text,
+  descripcion text,
+  imagen text,
+  CONSTRAINT ejercicio_pkey PRIMARY KEY (idEjercicio),
+  CONSTRAINT ejercicio_idParteTrabajo_fkey FOREIGN KEY (idParteTrabajo) REFERENCES public.partetrabajocuerpo(idParteTrabajo)
+);
+CREATE TABLE public.ejerciciopartetrabajo (
+  idParteTrabajo text NOT NULL,
+  idEjercicio bigint,
+  CONSTRAINT ejerciciopartetrabajo_pkey PRIMARY KEY (idParteTrabajo),
+  CONSTRAINT ejerciciopartetrabajo_idEjercicio_fkey FOREIGN KEY (idEjercicio) REFERENCES public.ejercicio(idEjercicio)
+);
+CREATE TABLE public.ejerciciorealizado (
+  idEjercicio bigint,
+  idUser bigint,
+  fechaEjercicio text,
+  repeticiones double precision,
+  tiempo bigint,
+  CONSTRAINT ejerciciorealizado_idEjercicio_fkey FOREIGN KEY (idEjercicio) REFERENCES public.ejercicio(idEjercicio),
+  CONSTRAINT ejerciciorealizado_idUser_fkey FOREIGN KEY (idUser) REFERENCES public.user(idUser)
+);
+CREATE TABLE public.user (
+  correo text,
+  metodoLogue text,
+  loginSucces text,
+  nombre text,
+  apellido text,
+  fechaNacimiento text,
+  telefono bigint,
+  sexo text,
+  experenciaPrevia text,
+  idUser bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  CONSTRAINT user_pkey PRIMARY KEY (idUser)
+);
+CREATE TABLE public.usuarioavances (
+  idUser bigint,
+  fechaDatos text,
+  peso double precision,
+  altura double precision,
+  pesoGrasa text,
+  pesoMusculo text,
+  idUserAvances bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  CONSTRAINT usuarioavances_pkey PRIMARY KEY (idUserAvances),
+  CONSTRAINT usuarioavances_idUser_fkey FOREIGN KEY (idUser) REFERENCES public.user(idUser)
+);
+CREATE TABLE public.partetrabajocuerpo (
+  isChecekd boolean,
+  idParteTrabajo bigint NOT NULL,
+  parteCuerpo text,
+  CONSTRAINT partetrabajocuerpo_pkey PRIMARY KEY (idParteTrabajo)
+);
+CREATE TABLE public.objetivosusuario (
+  idParteTrabajo bigint,
+  idUser bigint,
+  CONSTRAINT objetivosusuario_idUser_fkey FOREIGN KEY (idUser) REFERENCES public.user(idUser),
+  CONSTRAINT objetivosusuario_idParteTrabajo_fkey FOREIGN KEY (idParteTrabajo) REFERENCES public.partetrabajocuerpo(idParteTrabajo)
+);
+CREATE TABLE public.calorias (
+  idCalorias bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  idUser bigint,
+  fechaDatos text,
+  calorias bigint,
+  CONSTRAINT calorias_pkey PRIMARY KEY (idCalorias),
+  CONSTRAINT calorias_idUser_fkey FOREIGN KEY (idUser) REFERENCES public.user(idUser)
+);

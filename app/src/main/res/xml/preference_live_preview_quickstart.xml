@@ -57,7 +57,7 @@
 
     <PreferenceCategory android:title="@string/pref_category_text_recognition">
 
-        <SwitchPreferencepref_key_pose_detector_run_classification
+        <SwitchPreference
             android:defaultValue="true"
             android:key="@string/pref_key_group_recognized_text_in_blocks"
             android:persistent="true"
