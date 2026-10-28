@@ -138,8 +138,7 @@ Actualmente el proyecto se encuentra en su fase final del desarrollo
 
 Credenciales para la base de datos en Supabase:
 
-Usuario: diegotese3001@gmail.com
-Contraseña: 30.Diego.79
+
 
 Créditos
 
